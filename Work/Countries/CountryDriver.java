@@ -81,6 +81,9 @@ public class CountryDriver {
             }
         }
 
+        System.out.println("Now printing the unsorted array of kerry towns by population..");
+        System.out.println(KerryTowns.toString());
+
 
 
     }
