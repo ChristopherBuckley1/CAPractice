@@ -48,6 +48,40 @@ public class CountryDriver {
 
         System.out.println(Ireland.toString());
 
+        System.out.println("Finding and displaying details of town Killarney");
+        int kerryIndex = -1;
+        for(int i=0;i< counties.length;i++)
+        {
+            if(counties[i]!= null)
+            {
+                if(counties[i].getName().equals("Kerry"));
+                kerryIndex = i;
+                System.out.println("Kerry found!");
+                break;
+            }
+            else{
+                System.out.println("Kerry Not found!");
+            }
+        }
+        Town[] townSearch;
+        townSearch = counties[kerryIndex].getTowns();
+        if(kerryIndex != -1)
+        {
+            for(int j=0;j<townSearch.length;j++)
+            {
+                if(townSearch[j]!= null)
+                {
+                    if(townSearch[j].getName().equals("Killarney"))
+                    {
+                        System.out.println("Killarney found!\nNow printing out town details...");
+                        System.out.println(townSearch[j].toString());
+
+                    }
+                }
+            }
+        }
+
+
 
     }
 
