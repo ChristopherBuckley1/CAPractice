@@ -12,7 +12,7 @@ public class CountryDriver {
         Town t7 = new Town("Swords", 3248, "Dublin");
         Town t8 = new Town("Tallaght", 76000, "Dublin");
 
-        Town KerryTowns[] = new Town[2];
+        Town []KerryTowns = new Town[2];
         KerryTowns[0] = t1;
         KerryTowns[1] = t2;
 
@@ -51,7 +51,7 @@ public class CountryDriver {
         int kerryIndex = -1;
         for (int i = 0; i < counties.length; i++) {
             if (counties[i] != null) {
-                if (counties[i].getName().equals("Kerry")) ;
+                if (counties[i].getName().equals("Kerry"))
                 kerryIndex = i;
                 System.out.println("Kerry found!");
                 break;
@@ -102,24 +102,28 @@ public class CountryDriver {
     }
 
     public static void selectionSort(Town allTowns[]) {
-        Town smallest, temp;
+        Town smallest,temp;
         int sub;
 
-        for (int i = 0; i < allTowns.length - 1; i++) {
+        for(int i=0;i<allTowns.length-1;i++)
+        {
             smallest = allTowns[i];
             sub = i;
 
-            for (int j = i + 1; j < allTowns.length; j++)
-
-                if (allTowns[j].getPopulation() < smallest.getPopulation())
+            for(int j=i+1;j<allTowns.length;j++)
+            {
+                if(smallest.getPopulation()>allTowns[j].getPopulation())
                 {
-                    smallest = allTowns[j];
-                    sub = j;
+                    smallest=allTowns[j];
+                    sub =j;
                 }
+            }
             temp = allTowns[i];
             allTowns[i] = allTowns[sub];
             allTowns[sub] = temp;
         }
-//22345674003
+
     }
+
 }
+
