@@ -26,6 +26,7 @@ public class County {
         {
             num += towns[i].getPopulation();
         }
+
         return num;
     }
 
@@ -42,7 +43,8 @@ public class County {
     }
 
     public String toString(){
-        String str = "\nName: " + getName() +" Population: "+getPopulation()+"\nList of Towns:\n\n";
+        String populationFormatted = String.format("%,d",getPopulation());
+        String str = "\nName: " + getName() +" Population: "+populationFormatted+"\nList of Towns:\n\n";
 
         if (towns == null) {
             str += "No town specified";

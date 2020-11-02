@@ -3,6 +3,9 @@ package Work.Countries;
 public class CountryDriver {
     public static void main(String[] args) {
 
+        Town t9 = new Town();
+        System.out.println(t9.toString());
+
         Town t1 = new Town("Killarney", 14504, "Kerry");
         Town t2 = new Town("Tralee", 23691, "Kerry");
         Town t3 = new Town("Aglish", 23455, "Waterford");
@@ -102,26 +105,24 @@ public class CountryDriver {
     }
 
     public static void selectionSort(Town allTowns[]) {
-        Town smallest,temp;
-        int sub;
-
-        for(int i=0;i<allTowns.length-1;i++)
-        {
-            smallest = allTowns[i];
-            sub = i;
-
-            for(int j=i+1;j<allTowns.length;j++)
-            {
-                if(smallest.getPopulation()>allTowns[j].getPopulation())
-                {
-                    smallest=allTowns[j];
-                    sub =j;
-                }
-            }
-            temp = allTowns[i];
-            allTowns[i] = allTowns[sub];
-            allTowns[sub] = temp;
-        }
+       Town temp,smallest;
+       int sub;
+       for(int i=0;i<allTowns.length;i++)
+       {
+           smallest = allTowns[i];
+           sub = i;
+           for(int j=i+1;j< allTowns.length;j++)
+           {
+               if(smallest.getPopulation()>allTowns[j].getPopulation())
+               {
+                   smallest = allTowns[j];
+                   sub=j;
+               }
+           }
+           temp = allTowns[i];
+           allTowns[i] = allTowns[sub];
+           allTowns[sub]=temp;
+       }
 
     }
 

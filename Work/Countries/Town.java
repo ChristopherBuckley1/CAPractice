@@ -11,6 +11,13 @@ public class Town {
         setCounty(county);
 
     }
+    public Town()
+    {
+        setName("No NAme");
+        setPopulation(0);
+        setCounty("Dublin");
+    }
+
 
     public String getName() {
         return name;
@@ -37,7 +44,7 @@ public class Town {
     }
 
     public String toString()
-    {
-        return "Town Name: "+getName()+"\nPopulation: "+getPopulation()+"\nCounty: "+getCounty()+"\n";
+    {   String populationFormatted = String.format("%,d",getPopulation());
+        return "Town Name: "+getName()+"\nPopulation: "+populationFormatted+"\nCounty: "+getCounty()+"\n";
     }
 }
